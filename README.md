@@ -1,15 +1,16 @@
 # Instalação
+Vamos agora baixar o deno na nossa maquina. 
 ```bash
-curl -fsSL https://deno.land/x/install/install.sh | sh
+$ curl -fsSL https://deno.land/x/install/install.sh | sh
 ```
 
+Agora que baixamos, teremos que adicionar duas variaveis no nosso ambiente.
 ```bash 
-export DENO_INSTALL="/home/home/.deno"
+$ export DENO_INSTALL="/home/home/.deno"
+$ export PATH="$DENO_INSTALL/bin:$PATH"
 ```
-
-```bash
-export PATH="$DENO_INSTALL/bin:$PATH"
-```
+Pronto. Agora que instalamos na nossa maquina, vamos praticar.
+> :warning: Caso ocorra algum erro na instalação, deixe nos comentarios que irei ajuda-lo.
 
 # Criando um servidor
 Agora vamos criar um servidor simples para nós iniciar-mos nosso 
@@ -43,7 +44,7 @@ for await (const ) {
 
 Vamos agora executar nosso codigo.
 ```bash
-deno run main.ts
+$ deno run main.ts
 error: Uncaught PermissionDenied: network access to "0.0.0.0:8000", run again with the --allow-net flag
     at unwrapResponse ($deno$/ops/dispatch_json.ts:43:11)
     at Object.sendSync ($deno$/ops/dispatch_json.ts:72:10)
@@ -55,6 +56,11 @@ error: Uncaught PermissionDenied: network access to "0.0.0.0:8000", run again wi
 
 Note que ao executarmos, ele apresenta um erro, isso acontece porque não demos permissão para acessar a rede, para que ele possa executar precisamos passar este flag --allow-net pronto, agora vamos executar.
 ```bash
-deno run --allow-net main.ts 
+$ deno run --allow-net main.ts 
 ```
 
+Pronto. Agora que criamos um servidor com o deno, no próximo tutorial,
+iremos criar um RESTful API, para aprofundar-mos mais nossos estudos. 
+
+Deixe nos comentarios, o que achou do tutorial e se foi relevante pra você
+ ajudará muito.
