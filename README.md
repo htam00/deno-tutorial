@@ -16,9 +16,9 @@ Pronto. Agora que instalamos na nossa maquina, vamos praticar.
 Agora vamos criar um servidor simples para nós iniciar-mos nosso 
 estudo com deno.
 
-Vamos criar um arquivo, eu vou chamar de main.ts, mais você é livre pra colocar o nome que desejar, neste tutorial estou usando o linux.
+Vamos criar um arquivo, eu vou chamar-lo de main.ts, mais você é livre pra colocar o nome que desejar, neste tutorial estou usando o linux.
 ```bash
-touch main.ts
+$ touch main.ts
 ```
 Agora que já criamos nosso arquivo, vamos para o que interessa,
 primeiro vamos importar o link do servidor para dentro do nosso arquivo, porque diferentemente do node que baixava os pacotes pra dentro do nosso projeto, o deno trabalha diferente, você passa o link onde está hospedado o pacote que você deseja usar e apos executar o arquivo ele baixar este arquivo e memoriza em cache para quando você for utilizar novamente em um outro arquivo ele não vai precisar mais baixar, só vai executar arquivo e pronto.
@@ -64,3 +64,20 @@ iremos criar um RESTful API, para aprofundar-mos mais nossos estudos.
 
 Deixe nos comentarios, o que achou do tutorial e se foi relevante pra você
  ajudará muito.
+
+
+# File System
+No sistema de arquivo do deno, o que mais mim deixo alegre, foi ele cachear as operações.
+
+Para mover os textos de um arquivo para o outro usaremos este comando.
+```javascript
+import { move, moveSync } from "https://deno.land/std/fs/mod.ts";
+
+// Moved filename of async form.
+move("./file1", "./file2"); // 
+
+// Moved filename of sync from.
+moveSync("./file1", "./file2");
+```
+Note que temos duas formas de declarar, de forma sincrona e de forma assincrona.
+ 
